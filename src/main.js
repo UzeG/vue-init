@@ -1,11 +1,12 @@
 import Vue from 'vue'
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
 import App from './App.vue'
 
 import store from './store';
 
-Vue.use(ElementUI);
+import VueRouter from 'vue-router';
+import router from './router';
+
+Vue.use(VueRouter);
 Vue.config.productionTip = false
 
 new Vue({
@@ -13,5 +14,6 @@ new Vue({
   beforeCreate() {
     Vue.component.$bus = this;
   },
-  store
+  store,
+  router
 }).$mount('#app')
